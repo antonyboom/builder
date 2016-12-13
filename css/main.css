@@ -135,3 +135,39 @@ footer {
         /* increases the carousel height so it looks good on phones */
     }
 }
+
+/* ========= */
+
+#first {
+    background-image: url(../images/crushed_large.jpg);
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+.first-level {
+    color: white;
+    padding: 10px;
+    border: 1px solid;
+    border-color: #c5c5c5;
+    background: rgba(6, 6, 6, 0.7);
+}
+
+#second {
+    background-image: url(../images/granite_large.jpg);
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+.second-level {
+    padding: 25px 10px;
+    border: 1px solid;
+    border-color: #c5c5c5;
+    background: rgba(255, 255, 255, 0.75)
+}
+
+.desc .list-group-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}

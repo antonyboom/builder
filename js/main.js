@@ -9,10 +9,10 @@ var app = angular.module('builder', [
  * Configure the Routes
  */
 app.config(['$routeProvider', function ($routeProvider) {
+
   $routeProvider
     // Home
       .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-
       .when("/home", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
@@ -27,16 +27,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
+app.controller('PageCtrl', function ($scope, $location, $http) {
   console.log("Page Controller reporting for duty.");
 
-  // Activates the Carousel
-  $('.carousel').carousel({
-    interval: 5000
-  });
+    $scope.partner1 =  'images/partner01.png';
+    $scope.logo =  'images/logo4.png';
 
-  // Activates Tooltips for Social Links
-  $('.tooltip-social').tooltip({
-    selector: "a[data-toggle=tooltip]"
-  })
-})
+
+});
