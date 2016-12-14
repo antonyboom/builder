@@ -1,8 +1,8 @@
-/* 
+/*
 Custom CSS for...
 'Modern Business' HTML Theme by Start Bootstrap
 
-All Start Bootstrap themes are licensed under Apache 2.0. 
+All Start Bootstrap themes are licensed under Apache 2.0.
 For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
 */
 
@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
@@ -138,6 +138,78 @@ footer {
 
 /* ========= */
 
+/* navbar */
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar-custom-background {
+    background-image: url(../images/crushed_large.jpg);
+}
+.navbar-fixed-lower {
+    top: 50px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+.navbar-border {
+    border-top: 2px solid;
+    border-color: #df7e0a !important;
+}
+
+.custom-font {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.nav>li>a {
+    padding: 15px 15px;
+}
+a {
+    color: #df7e0a;
+    text-decoration: none;
+}
+a:hover {
+    color: #555555;
+    background: inherit;
+    text-decoration: none;
+}
+a:active {
+    color: #555555;
+    background: inherit;
+    text-decoration: none;
+}
+a:focus {
+    color: #555555;
+    background: inherit;
+    text-decoration: none;
+}
+.nav.custom-font>li>a:hover {
+    color: #fcfcfc;
+    background: inherit;
+    text-decoration: none;
+}
+.nav.custom-font>li>a:active {
+    color: #fcfcfc;
+    background: none;
+    text-decoration: none;
+}
+.nav.custom-font>li>a:focus {
+    color: #fcfcfc;
+    background: none;
+    text-decoration: none;
+}
+/* first container home page */
+
 #first {
     background-image: url(../images/crushed_large.jpg);
     width: 100%;
@@ -152,6 +224,8 @@ footer {
     border-color: #c5c5c5;
     background: rgba(6, 6, 6, 0.7);
 }
+
+/* second container home page */
 
 #second {
     background-image: url(../images/granite_large.jpg);
