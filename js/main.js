@@ -30,8 +30,42 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('PageCtrl', function ($scope, $location, $http) {
   console.log("Page Controller reporting for duty.");
 
-    $scope.partner1 =  'images/partner01.png';
+    $scope.partner1 =  'images/partner1.png';
+    $scope.partner2 =  'images/partner2.png';
     $scope.logo =  'images/logo4.png';
+    $scope.homeLogo =  'images/home-logo.png';
 
 
+    $scope.kinds = [{
+            id: 0,
+            path: 'images/gran.jpg'
+        }, {
+            id: 1,
+            path: 'images/izvest.jpg'
+        }, {
+            id: 2,
+            path: 'images/mixed.jpg'
+        }];
+
+    $scope.desc = [{
+        id: 0,
+        name: 'Щебень Гранитный'
+    }, {
+        id: 1,
+        name: 'Щебень Известняковый'
+    }, {
+        id: 2,
+        name: 'Щебень Гравийный'
+    }];
+
+    $scope.image = $scope.kinds[0].path;
+
+    $scope.pick = function (id) {
+
+        angular.forEach($scope.kinds, function (val) {
+            if (val.id == id){
+                $scope.image = val.path
+            }
+        })
+    }
 });

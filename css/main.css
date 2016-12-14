@@ -8,6 +8,8 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 
 /* Global Styles */
 
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700&subset=cyrillic,cyrillic-ext,latin-ext';
+
 html, body {
     height: 100%;
 }
@@ -15,6 +17,9 @@ html, body {
 body {
     padding-top: 100px;
     padding-bottom: 20px;
+
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .dropdown {
@@ -124,7 +129,9 @@ body {
 
 /* Footer Styles */
 footer {
-    margin: 50px 0;
+    height: 75px;
+    padding: 25px 0;
+    /*margin: 50px 0;*/
 }
 
 /* Responsive Styles */
@@ -151,8 +158,8 @@ footer {
     font-size: 18px;
     line-height: 20px;
 }
-.navbar-custom-background {
-    background-image: url(../images/crushed_large.jpg);
+.custom-background {
+    background-image: url(../images/crushed_back.jpg);
 }
 .navbar-fixed-lower {
     top: 50px;
@@ -211,24 +218,30 @@ a:focus {
 /* first container home page */
 
 #first {
-    background-image: url(../images/crushed_large.jpg);
+    background-image: url(../images/test2.jpg);
     width: 100%;
     height: auto;
     background-size: cover;
 }
 
 .first-level {
+    /*color: white;*/
+    /*padding: 10px;*/
+    /*border: 1px solid;*/
+    /*border-color: #c5c5c5;*/
+    /*background: rgba(6, 6, 6, 0.7);*/
+
     color: white;
     padding: 10px;
     border: 1px solid;
-    border-color: #c5c5c5;
-    background: rgba(6, 6, 6, 0.7);
+    border-color: #de7d09;
+    background: rgba(0,0,0,0.5);
 }
 
 /* second container home page */
 
 #second {
-    background-image: url(../images/granite_large.jpg);
+    /*background-image: url(../images/granite_large.jpg);*/
     width: 100%;
     height: auto;
     background-size: cover;
@@ -237,11 +250,42 @@ a:focus {
 .second-level {
     padding: 25px 10px;
     border: 1px solid;
-    border-color: #c5c5c5;
-    background: rgba(255, 255, 255, 0.75)
+    /*background: rgba(255, 255, 255, 0.75)*/
+
+    color: white;
+    border-color: #de7d09;
+    background: rgba(0,0,0,0.5);
 }
 
+.desc .list-group-item {
+    background-color: rgba(121, 121, 121, 0.75);
+    border: 1px solid #de7d09;
+}
 .desc .list-group-item:hover {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #de7d09;
+    color: #000000;
+}
+
+#partners {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,1c1c1c+9,2b2b2b+24,111111+40,474747+61,666666+75,595959+88,4c4c4c+100 */
+    background: rgb(19,19,19); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(19,19,19,1) 0%, rgba(28,28,28,1) 9%, rgba(43,43,43,1) 24%, rgba(17,17,17,1) 40%, rgba(71,71,71,1) 61%, rgba(102,102,102,1) 75%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(19,19,19,1) 0%,rgba(28,28,28,1) 9%,rgba(43,43,43,1) 24%,rgba(17,17,17,1) 40%,rgba(71,71,71,1) 61%,rgba(102,102,102,1) 75%,rgba(89,89,89,1) 88%,rgba(76,76,76,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(19,19,19,1) 0%,rgba(28,28,28,1) 9%,rgba(43,43,43,1) 24%,rgba(17,17,17,1) 40%,rgba(71,71,71,1) 61%,rgba(102,102,102,1) 75%,rgba(89,89,89,1) 88%,rgba(76,76,76,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#4c4c4c',GradientType=0 ); /* IE6-9 */
+}
+
+.partner-header {
     color: white;
+}
+
+.hr-color {
+    background-color: #de7d09;
+    border: 1px solid #de7d09;
+
+}
+
+.border {
+    border: 1px solid #de7d09;
+
 }

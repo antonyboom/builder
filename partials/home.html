@@ -1,79 +1,77 @@
+<div id="first">
+    <div class="section">
 
-<div class="section" id="first">
+        <div class="container">
 
-    <div class="container">
-
-        <div class="row first-level">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h2 align="center"> Добро пожаловать на сайт компании ООО "Строй-Древ"</h2>
+            <div class="row first-level">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h2 align="center">ООО "Строй-Древ"</h2>
                     <ul>
                         <li>Мы уверены, что в лице нашей компании Вы найдете достойного партнера для Вашего бизнеса</li>
-                        <li>Компания ООО «СТРОЙ-ДРЕВ» уже более 15 лет работает на  рынке поставок щебня и является дилером российских производителей</li>
+                        <li>Компания ООО «СТРОЙ-ДРЕВ» уже более 15 лет работает на рынке поставок щебня и является
+                            дилером российских производителей
+                        </li>
                         <li>Высокий профессионализм наших сотрудников и большой выбор предлагаемой продукции</li>
                         <li>Для удобства наших клиентов мы можем предложить качественный и необходимый товар</li>
-                        <li>Наш ассортимент постоянно обновляется в связи с пожеланиями и потребностями наших клиентов</li>
+                        <li>Наш ассортимент постоянно обновляется в связи с пожеланиями и потребностями наших клиентов
+                        </li>
                         <li>Вы можете приобрести любой материал в одном месте</li>
-                        <li>При наличие материала на складе в Москве, мы поставим его в кратчайшие сроки</li>
-                        <li>Так же мы предоставляем услуги по перевозке сыпучих материалов</li>
                     </ul>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <!--<img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">-->
-                <img class="img-responsive" src="http://placehold.it/700x450" style="margin-top: 20px">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <!--<img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">-->
+                    <img class="img-responsive" ng-src="{{homeLogo}}" style="margin-top: 20px">
 
+                </div>
             </div>
+            <!-- /.row -->
+
         </div>
-        <!-- /.row -->
+        <!-- /.container -->
 
     </div>
-    <!-- /.container -->
+    <!-- /.section-colored -->
 
-</div>
-<!-- /.section-colored -->
+    <div class="section" id="second">
 
-<div class="section" id="second">
+        <div class="container">
 
-    <div class="container">
-
-        <div class="row second-level">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
-                <!--<img class="img-responsive" src="http://placehold.it/700x450">-->
+            <div class="row second-level">
+                <div class="col-lg-6 col-md-6 col-sm-6" >
+                    <img class="img-responsive border" ng-src="{{image}}">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h2 align="center">Щебень</h2>
+                    <ul class="list-group desc" ng-repeat="item in desc">
+                        <li class="list-group-item desc"  ng-click="pick(item.id)">{{item.name}}</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2 align="center">Щебень</h2>
-                <ul  class="list-group desc">
-                    <li class="list-group-item desc">Щебень Гранитный</li>
-                    <li class="list-group-item desc">Щебень Известняковый</li>
-                    <li class="list-group-item desc">Щебень Гравийный</li>
-                </ul>
-            </div>
+            <!-- /.row -->
+
         </div>
-        <!-- /.row -->
-
+        <!-- /.container -->
+        <br>
     </div>
-    <!-- /.container -->
-
+    <!-- /.section -->
 </div>
-<!-- /.section -->
 
-<div class="section">
+<div class="section" id="partners">
 
     <div class="container">
-
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>НАШИ ПАРТНЕРЫ</h2>
-                <hr>
+                <h2 class="partner-header">НАШИ ПАРТНЕРЫ</h2>
+                <hr class="hr-color">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <a href="http://www.granit.by">
+                <a href="http://www.granit.by" target="_blank">
                     <img class="img-responsive img-home-portfolio" ng-src="{{partner1}}">
                 </a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
+                <a href="http://www.pogorelovskiykarier.ru" target="_blank">
+                    <img class="img-responsive img-home-portfolio"  ng-src="{{partner2}}">
                 </a>
             </div>
         </div>
