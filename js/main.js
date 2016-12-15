@@ -2,7 +2,8 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('builder', [
-  'ngRoute'
+  'ngRoute',
+    'bootstrapLightbox'
 ]);
 
 /**
@@ -27,7 +28,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function ($scope, $location, $http) {
+app.controller('PageCtrl', function ($scope, $location, $http, Lightbox) {
   console.log("Page Controller reporting for duty.");
 
     $scope.partner1 =  'images/partner1.png';
@@ -55,15 +56,15 @@ app.controller('PageCtrl', function ($scope, $location, $http) {
         }];
 
     $scope.desc = [{
-        id: 0,
-        name: 'Щебень Гранитный'
-    }, {
-        id: 1,
-        name: 'Щебень Известняковый'
-    }, {
-        id: 2,
-        name: 'Щебень Гравийный'
-    }];
+            id: 0,
+            name: 'Щебень Гранитный'
+        }, {
+            id: 1,
+            name: 'Щебень Известняковый'
+        }, {
+            id: 2,
+            name: 'Щебень Гравийный'
+        }];
 
     $scope.image = $scope.kinds[0].path;
 
@@ -74,5 +75,28 @@ app.controller('PageCtrl', function ($scope, $location, $http) {
                 $scope.image = val.path
             }
         })
-    }
+    };
+
+    $scope.certificates = [
+        {
+            'url': 'images/сertificate01.jpg',
+            'thumbUrl': 'images/tumbCert01.jpg' // used only for this example
+        },
+        {
+            'url': 'images/сertificate02.jpg',
+            'thumbUrl': 'images/tumbCert02.jpg' // used only for this example
+        },
+        {
+            'url': 'images/сertificate03.jpg',
+            'thumbUrl': 'images/tumbCert03.jpg' // used only for this example
+        },
+        {
+            'url': 'images/сertificate04.jpg',
+            'thumbUrl': 'images/tumbCert04.jpg' // used only for this example
+        }
+    ];
+
+    $scope.openLightboxModal = function (index) {
+        Lightbox.openModal($scope.certificates, index);
+    };
 });

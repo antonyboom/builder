@@ -33,17 +33,10 @@
 
         <div class="col-md-8 col-sm-6 favor">
             <h2 class="page-header">Сертификаты</h2>
-            <div class="col-xs-3">
-                <img ng-src="{{cer1}}" class="img-thumbnail img-responsive" alt="" width="300" height="429">
-            </div>
-            <div class="col-xs-3">
-                <img ng-src="{{cer2}}" class="img-thumbnail img-responsive" alt="" width="300" height="429">
-            </div>
-            <div class="col-xs-3">
-                <img ng-src="{{cer3}}" class="img-thumbnail img-responsive" alt="" width="300" height="429">
-            </div>
-            <div class="col-xs-3">
-                <img ng-src="{{cer4}}" class="img-thumbnail img-responsive" alt="" width="300" height="429">
+            <div class="col-xs-3" ng-repeat="image in certificates">
+                    <a ng-click="openLightboxModal($index)">
+                        <img ng-src="{{image.thumbUrl}}" class="img-thumbnail img-responsive" alt="" width="300" height="429">
+                    </a>
             </div>
         </div>
 
