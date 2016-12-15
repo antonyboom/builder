@@ -35,6 +35,13 @@ app.controller('PageCtrl', function ($scope, $location, $http) {
     $scope.logo =  'images/logo4.png';
     $scope.homeLogo =  'images/home-logo.png';
 
+    $scope.cer1 =  'images/сertificate01.jpg';
+    $scope.cer2 =  'images/сertificate02.jpg';
+    $scope.cer3 =  'images/сertificate03.jpg';
+    $scope.cer4 =  'images/сertificate04.jpg';
+
+    $scope.aggregates =  'images/aggregates.jpg';
+
 
     $scope.kinds = [{
             id: 0,

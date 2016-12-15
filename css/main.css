@@ -169,7 +169,6 @@ footer {
     background: linear-gradient(to bottom,  rgba(117,117,117,0) 0%,rgb(255, 190, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00757575', endColorstr='#a6ffc419',GradientType=0 ); /* IE6-9 */
 
-
 }
 
 .navbar-fixed-lower {
@@ -192,6 +191,20 @@ footer {
 .nav>li>a {
     padding: 15px 15px;
 }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+
+    .custom-font {
+        margin-left: 0px;
+        font-size: 18px;
+    }
+
+    .nav>li>a {
+        text-align: left;
+    }
+}
+
 a {
     color: #df7e0a;
     text-decoration: none;
@@ -293,10 +306,12 @@ a:focus {
 .hr-color {
     background-color: #de7d09;
     border: 1px solid #de7d09;
-
 }
 
 .border {
     border: 1px solid #de7d09;
+}
 
+.favor {
+    display: inline-block;
 }
