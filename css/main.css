@@ -164,6 +164,7 @@ footer {
     margin-bottom: 0;
 }
 .navbar-brand {
+    max-height: 50px;
     float: left;
     height: 50px;
     padding: 0px 15px;
@@ -350,35 +351,46 @@ hr {
     font-weight: 100;
 }
 
-/*!* Responsive Styles *!*/
+.header-info {
+    padding: 15px !important;
+}
+
+.navbar-header {
+    width: 100%;
+}
+.header-info-phone {
+    padding: 0 50px 0 0;
+}
+/*!*!* Responsive Styles *!*!*/
 /*@media screen and (min-width: 992px) and (max-width: 1200px) {*/
-    /*.welcome {*/
-        /*width: 950px;*/
+    /*.header-info {*/
+        /*padding: 15px !important;*/
     /*}*/
-    /*.welcome-title {*/
-        /*font-size: 30px;*/
-    /*}*/
+
 /*}*/
 
 /*!* Responsive Styles *!*/
-/*@media screen and (min-width: 775px) and (max-width: 991px) {*/
-    /*.welcome {*/
-        /*width: 730px;*/
-    /*}*/
-    /*.welcome-title {*/
-        /*font-size: 20px;*/
-    /*}*/
-/*}*/
+@media screen and (min-width: 775px) and (max-width: 991px) {
+    .header-info {
+        right: 0;
+        padding: 10px !important;
+        position: absolute;
+    }
+    .header-info-phone {
+        padding: 0 15px 0 0;
+    }
+
+}
 
 /*!* Responsive Styles *!*/
-/*@media screen and (max-width: 774px) {*/
-    /*.welcome {*/
-        /*width: 96%;*/
-    /*}*/
-    /*.welcome-title {*/
-        /*font-size: 16px;*/
-    /*}*/
-/*}*/
+@media screen and (max-width: 774px) {
+    .header-info-address {
+        display: none;
+    }
+    .header-info-phone {
+        padding: 0 10px 0 0;
+    }
+}
 
 
 #myTab {
@@ -388,3 +400,4 @@ hr {
 .breadcrumb {
     background-color: inherit;
 }
+
