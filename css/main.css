@@ -315,3 +315,52 @@ a:focus {
 .favor {
     display: inline-block;
 }
+
+.titles {
+    margin-top: 20px;
+    padding: 25px;
+}
+
+.welcome {
+    width: 1150px;
+    border: 2px solid;
+    position: absolute;
+    top: 110px;
+    border-color: #de7d09;
+    padding: 10px 10px 0 10px;
+    background-color: #ffc419;
+}
+
+.welcome-title {
+    font-size: 36px;
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .welcome {
+        width: 950px;
+    }
+    .welcome-title {
+        font-size: 30px;
+    }
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 775px) and (max-width: 991px) {
+    .welcome {
+        width: 730px;
+    }
+    .welcome-title {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 774px) {
+    .welcome {
+        width: 96%;
+    }
+    .welcome-title {
+        font-size: 16px;
+    }
+}
