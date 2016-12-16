@@ -2,7 +2,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('builder', [
-  'ngRoute',
+    'ngRoute',
     'bootstrapLightbox'
 ]);
 
@@ -41,6 +41,10 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox) {
     $scope.cer3 =  'images/сertificate03.jpg';
     $scope.cer4 =  'images/сertificate04.jpg';
 
+    $scope.granit1200 =  'images/granit1200.jpeg';
+    $scope.izvest1200 =  'images/izvest1200.jpeg';
+    $scope.grav1200 =  'images/grav1200.jpeg';
+
     $scope.aggregates =  'images/aggregates.jpg';
 
 
@@ -65,19 +69,20 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox) {
             id: 2,
             name: 'Щебень Гравийный'
         }];
+
     $scope.titles = [{
-        id: 0,
-        name: 'Более 15 лет безупречной работы на рынке'
-    }, {
-        id: 1,
-        name: 'Быстрые сроки доставки'
-    }, {
-        id: 2,
-        name: 'Официальный поставщик экологически чистого гранитного щебня из Европы'
-    }, {
-        id: 3,
-        name: 'Материалы сертифицированы и сопровождаются паспортом качества'
-    }];
+            id: 0,
+            name: 'Более 15 лет безупречной работы на рынке'
+        }, {
+            id: 1,
+            name: 'Быстрые сроки доставки'
+        }, {
+            id: 2,
+            name: 'Официальный поставщик экологически чистого гранитного щебня из Европы'
+        }, {
+            id: 3,
+            name: 'Материалы сертифицированы и сопровождаются паспортом качества'
+        }];
 
     $scope.image = $scope.kinds[0].path;
 
@@ -112,4 +117,26 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox) {
     $scope.openLightboxModal = function (index) {
         Lightbox.openModal($scope.certificates, index);
     };
-});
+
+    $scope.submitForm = function(form) {
+        $scope.processForm(form)
+    };
+
+    $scope.processForm = function(data) {
+            $http({
+                method  : 'POST',
+                url     : 'process.php',
+                data    : $.param(data),  // pass in data as strings
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+                .success(function(data) {
+                    console.log(data);
+                    if (!data.success) {
+                        $scope.message = data.message;
+                    } else {
+                        $scope.message = data.message;
+                    }
+                });
+        };
+
+    });

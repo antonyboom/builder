@@ -1,15 +1,26 @@
 <div id="first">
-    <div class="section">
+
+    <div class="section short-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 welcome">
+                    <h1 class="welcome-title" align="center">
+                        ПОСТАВКА НЕРУДНЫХ МАТЕРИАЛОВ НАПРЯМУЮ С КАРЬЕРОВ
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section short-bottom">
 
         <div class="container">
 
             <div class="row first-level">
-                <div class="welcome">
-                    <p class="welcome-title" align="center">ПОСТАВКА НЕРУДНЫХ МАТЕРИАЛОВ НАПРЯМУЮ С КАРЬЕРОВ</p>
-                </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 titles">
                     <ul class="list-group desc" ng-repeat="item in titles">
-                        <li class="list-group-item desc">{{item.name}}</li>
+                        <li class="list-group-item desc">{{item.name.toUpperCase()}}</li>
                     </ul>
                     <!--<h2 align="center">ООО "Строй-Древ"</h2>-->
                     <!--<ul>-->
@@ -36,8 +47,27 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.section-colored -->
 
+    <div class="section middle" >
+        <!-- Service Tabs -->
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12 favor">
+                    <h2 class="page-header" align="center">СЕРТИФИКАТЫ</h2>
+                    <div class="col-xs-3" ng-repeat="image in certificates">
+                        <a ng-click="openLightboxModal($index)">
+                            <img ng-src="{{image.thumbUrl}}" class="img-thumbnail img-responsive" alt="" width="300"
+                                 height="429">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+
+    <!-- /.section-colored -->
     <div class="section" id="second">
 
         <div class="container">
@@ -47,9 +77,9 @@
                     <img class="img-responsive border" ng-src="{{image}}">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h2 align="center">Щебень</h2>
+                    <h2 align="center">ЩЕБЕНЬ</h2>
                     <ul class="list-group desc" ng-repeat="item in desc">
-                        <li class="list-group-item desc" ng-mouseover="pick(item.id)">{{item.name}}</li>
+                        <li class="list-group-item desc" ng-mouseover="pick(item.id)">{{item.name.toUpperCase()}}</li>
                     </ul>
                 </div>
             </div>
@@ -67,8 +97,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="partner-header">НАШИ ПАРТНЕРЫ</h2>
-                <hr class="hr-color">
+                <h2 class="page-header" align="center">НАШИ ПАРТНЕРЫ</h2>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <!--<a href="http://www.granit.by" target="_blank">-->
