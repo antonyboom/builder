@@ -17,6 +17,7 @@ html, body {
 body {
     padding-top: 100px;
     /*padding-bottom: 20px;*/
+    color: white;;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
 }
@@ -305,6 +306,21 @@ a:focus {
     color: #000000;
 }
 
+.deliver .list-group-item {
+    font-weight: 300;
+    color: white;
+    padding-left: 50px;
+    text-align: left;
+    background-color: rgba(121, 121, 121, 0.75);
+    border: 1px solid #de7d09;
+}
+.deliver .list-group-item:hover {
+    background-color: #de7d09;
+    color: #000000;
+    font-weight: 900;
+    font-size: 15px;
+}
+
 #partners {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,1c1c1c+9,2b2b2b+24,111111+40,474747+61,666666+75,595959+88,4c4c4c+100 */
     background: rgb(19,19,19); /* Old browsers */
@@ -352,6 +368,7 @@ hr {
 }
 
 .header-info {
+    color: black;!important;
     padding: 15px !important;
 }
 

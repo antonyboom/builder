@@ -3,6 +3,7 @@
  */
 var app = angular.module('builder', [
     'ngRoute',
+    'ngSanitize',
     'bootstrapLightbox'
 ]);
 
@@ -28,8 +29,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function ($scope, $location, $http, Lightbox) {
-  console.log("Page Controller reporting for duty.");
+app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce) {
+
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
+
+    $scope.officeLocation = '//api-maps.yandex.ru/frame/v1/-/CZHge-6v'
 
     $scope.partner1 =  'images/partner1.png';
     $scope.partner2 =  'images/partner2.png';
