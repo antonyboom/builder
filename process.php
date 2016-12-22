@@ -1,28 +1,35 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+require_once 'mailer/PHPMailerAutoload.php';
 
-$errors         = array();  	// array to hold validation errors
-$data 			= array(); 		// array to pass back data
+if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputPhone']) && isset($_POST['inputMessage'])) {
 
-// validate the variables ======================================================
-	if (empty($_POST['name']))
-		$errors['name'] = 'Name is required.';
+    //create an instance of PHPMailer
+    $mail = new PHPMailer();
 
+    $mail->From = $_POST['inputEmail'];
+    $mail->FromName = $_POST['inputName'];
+    $mail->AddAddress('stroydrew@mail.com'); //recipient
+    $mail->Subject = $_POST['inputName'];
+    $mail->Body = "Phone: " . $_POST['inputPhone'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 
+    if (isset($_POST['ref'])) {
+        $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
+    }
 
-// return a response ===========================================================
+    if(!$mail->send()) {
+        $formData = array('success' => false, 'message' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
+        echo json_encode($formData);
+        exit;
+    }
 
-	// response if there are errors
-	if ( ! empty($errors)) {
+    $formData = array('success' => true, 'message' => 'Thanks! We have received your message.');
+    echo json_encode($formData);
 
-		// if there are items in our errors array, return those errors
-		$data['success'] = false;
-		$data['errors']  = $errors;
-	} else {
+} else {
 
-		// if there are no errors, return a message
-		$data['success'] = true;
-		$data['message'] = 'Success!';
-	}
+    $formData = array('success' => false, 'message' => 'Please fill out the form completely.');
+    echo json_encode($formData);
 
-	// return all our data to an AJAX call
-	echo json_encode($data);
+}

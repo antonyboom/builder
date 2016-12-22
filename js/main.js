@@ -29,7 +29,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce) {
+app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce, $window) {
 
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
@@ -125,24 +125,38 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce) {
     };
 
     $scope.submitForm = function(form) {
+
         $scope.processForm(form)
     };
 
-    $scope.processForm = function(data) {
-            $http({
-                method  : 'POST',
-                url     : 'process.php',
-                data    : $.param(data),  // pass in data as strings
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
-                    console.log(data);
-                    if (!data.success) {
-                        $scope.message = data.message;
-                    } else {
-                        $scope.message = data.message;
-                    }
-                });
-        };
 
-    });
+    $scope.success = false;
+    $scope.error = false;
+
+    $scope.processForm = function(form) {
+
+        $scope.formData = form;
+
+        console.log(form);
+
+        $http({
+            method  : 'POST',
+            url     : 'process.php',
+            data    : $.param($scope.formData),
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).success(function(data) {
+
+            console.log(data);
+
+            if (data.success) {
+                $scope.success = true;
+                console.log('Success');
+            } else {
+                $scope.error = false;
+                console.log('Fail');
+            }
+        });
+    };
+
+
+});

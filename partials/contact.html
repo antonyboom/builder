@@ -17,8 +17,9 @@
             <div class="col-lg-12">
                 <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
                 <!--<iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"-->
-                        <!--src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>-->
-                <iframe ng-src="{{trustSrc(officeLocation)}}" width="100%" height="400" frameborder="1" style="border:  2px solid; border-color: #de7d09; "></iframe>
+                <!--src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>-->
+                <iframe ng-src="{{trustSrc(officeLocation)}}" width="100%" height="400" frameborder="1"
+                        style="border:  2px solid; border-color: #de7d09; "></iframe>
             </div>
 
         </div>
@@ -27,39 +28,73 @@
         <div class="row">
 
             <div class="col-sm-12">
-                <h3>У вас есть вопрос?</h3>
 
-                <p>Вы всегда можете оставить свой вопрос онлайн и наши консультанты свяжуться с вами в кратчайшие
-                    сроки.</p>
+                <div class="col-lg-12">
+                    <h3>У вас есть вопрос?</h3>
 
-                <form role="form" method="POST" action="#">
-                    <div class="row">
-                        <div class="form-group col-lg-4">
-                            <label for="input1">ИМЯ</label>
-                            <input type="text" name="contact_name" class="form-control" id="input1">
-                        </div>
-                        <div class="form-group col-lg-4">
-                            <label for="input2">ЭЛЕКТРОННАЯ ПОЧТА</label>
-                            <input type="email" name="contact_email" class="form-control" id="input2">
-                        </div>
-                        <div class="form-group col-lg-4">
-                            <label for="input3">ОБРАТНЫЙ НОМЕР</label>
-                            <input type="phone" name="contact_phone" class="form-control" id="input3">
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="form-group col-lg-12">
-                            <label for="input4">СООБЩЕНИЕ</label>
-                            <textarea name="contact_message" class="form-control" rows="3" id="input4"></textarea>
-                        </div>
-                        <div class="form-group col-lg-12">
-                            <input type="hidden" name="save" value="contact">
-                            <button type="submit" class="btn btn-warning">ОТПРАВИТЬ</button>
-                        </div>
+                    <p>Вы всегда можете оставить свой вопрос онлайн и наши консультанты свяжуться с вами в кратчайшие
+                        сроки.</p>
+                </div>
+
+                <form name="userForm" ng-submit="submitForm(user)" autocomplete="off">
+
+                    <div class="alert alert-success" ng-show="success">Thanks for getting in touch!</div>
+                    <div class="alert alert-error" ng-show="error">Something wrong happened!, please try again.</div>
+
+                    <!-- NAME -->
+                    <div class="form-group col-lg-4"
+                         ng-class="{ 'has-error' : userForm.inputName.$invalid && !userForm.inputName.$pristine }">
+                        <label>ИМЯ *</label>
+                        <input type="text" name="inputName" class="form-control" ng-model="user.inputName" required>
+                        <p ng-show="userForm.inputName.$invalid && !userForm.inputName.$pristine" class="help-block">
+                            Введите ваше
+                            имя.</p>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group col-lg-4"
+                         ng-class="{ 'has-error' : userForm.inputEmail.$invalid && !userForm.inputEmail.$pristine }">
+                        <label>ЭЛЕКТРОННАЯ ПОЧТА *</label>
+                        <input type="email" name="inputEmail" class="form-control" ng-model="user.inputEmail" required>
+                        <p ng-show="userForm.inputEmail.$invalid && !userForm.inputEmail.$pristine" class="help-block">
+                            Неправильный формат электронной почты.</p>
+                    </div>
+
+                    <!-- USER CELL -->
+                    <div class="form-group col-lg-4"
+                         ng-class="{ 'has-error' : userForm.inputPhone.$invalid && !userForm.inputPhone.$pristine }">
+                        <label>ТЕЛЕФОН *</label>
+                        <input type="number" name="inputPhone" class="form-control" ng-model="user.inputPhone"
+                               ng-minlength="10"
+                               ng-maxlength="10" required>
+                        <p ng-show="userForm.inputPhone.$error.minlength" class="help-block">Неправильный формат
+                            номера.</p>
+                        <p ng-show="userForm.inputPhone.$error.maxlength" class="help-block">Неправильный формат
+                            номера.</p>
+                    </div>
+
+                    <!-- COMMENT -->
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12"
+                         ng-class="{ 'has-error' : userForm.inputMessage.$invalid && !userForm.inputMessage.$pristine }">
+                        <label>ВАШЕ СООБЩЕНИЕ *</label>
+                        <textarea name="message" class="form-control" ng-model="user.inputMessage" required></textarea>
+                        <p ng-show="userForm.inputMessage.$invalid && !userForm.inputMessage.$pristine"
+                           class="help-block">Введите
+                            ваше сообщение.</p>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="contact">
+                        <button type="submit" class="btn btn-warning pull-right"
+                                ng-disabled="!userForm.$valid">ОТПРАВИТЬ
+                        </button>
                     </div>
                 </form>
-            </div>
 
+            </div>
         </div>
+
         <!-- /.row -->
 
     </div><!-- /.container -->
