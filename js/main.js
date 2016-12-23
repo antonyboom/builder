@@ -34,7 +34,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce, $
         return $sce.trustAsResourceUrl(src);
     };
 
-    $scope.officeLocation = '//api-maps.yandex.ru/frame/v1/-/CZHge-6v';
+    $scope.officeLocation = '//api-maps.yandex.ru/frame/v1/-/CZHtFUMo';
 
     $scope.partner1 =  'images/partner1.png';
     $scope.partner2 =  'images/partner2.png';
