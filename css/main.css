@@ -16,7 +16,6 @@ html, body {
 
 body {
     padding-top: 100px;
-    /*padding-bottom: 20px;*/
     color: white;;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
@@ -389,7 +388,7 @@ hr {
 
 
 /*!* Responsive Styles *!*/
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
     .navbar-header {
          width: 100%;
     }
@@ -397,7 +396,7 @@ hr {
 
 
     /*!* Responsive Styles *!*/
-@media screen and (min-width: 775px) and (max-width: 991px) {
+@media (min-width: 775px) and (max-width: 991px) {
     .header-info {
         right: 0;
         padding: 10px !important;
@@ -414,7 +413,7 @@ hr {
 }
 
 /*!* Responsive Styles *!*/
-@media screen and (max-width: 774px) {
+@media (max-width: 774px) {
     .header-info-address {
         display: none;
     }
