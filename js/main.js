@@ -17,10 +17,9 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
       .when("/home", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
-    .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-    .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
+    .when("/delivery", {templateUrl: "partials/delivery.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
-    .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
+    .when("/stones", {templateUrl: "partials/stones.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
     // else 404
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
@@ -33,9 +32,9 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce, $
 
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
-    }
+    };
 
-    $scope.officeLocation = '//api-maps.yandex.ru/frame/v1/-/CZHge-6v'
+    $scope.officeLocation = '//api-maps.yandex.ru/frame/v1/-/CZHge-6v';
 
     $scope.partner1 =  'images/partner1.png';
     $scope.partner2 =  'images/partner2.png';

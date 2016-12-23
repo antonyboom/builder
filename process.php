@@ -12,7 +12,9 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     $mail->FromName = $_POST['inputName'];
     $mail->AddAddress('stroydrew@mail.com'); //recipient
     $mail->Subject = $_POST['inputName'];
-    $mail->Body = "Phone: " . $_POST['inputPhone'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->Body =
+
+    "От: " . $_POST['inputEmail'] . "\r\n\r\nТелефон: " . stripslashes($_POST['inputPhone'])  . "\r\n\r\nСообщение: " . stripslashes($_POST['inputMessage']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
