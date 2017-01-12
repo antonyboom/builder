@@ -38,6 +38,13 @@ app.controller('PageCtrl', function ($scope, $location, $http, Lightbox, $sce, $
 
     $scope.partner1 =  'images/partner1.png';
     $scope.partner2 =  'images/partner2.png';
+    $scope.partner3 =  'images/partner3.png';
+
+    $scope.partner4 =  'images/partner4.png';
+    $scope.partner5 =  'images/partner5.png';
+    $scope.partner6 =  'images/partner6.png';
+
+
     $scope.logo =  'images/logo4.png';
     $scope.homeLogo =  'images/home-logo.png';
 
