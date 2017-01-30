@@ -3,6 +3,9 @@
  */
 var app = angular.module('builder', [
     'ngRoute',
+    'ui.bootstrap',
+    'ngTouch',
+    'ngAnimate',
     'ngSanitize',
     'bootstrapLightbox'
 ]);
